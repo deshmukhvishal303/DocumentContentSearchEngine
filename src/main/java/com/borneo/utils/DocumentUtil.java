@@ -14,11 +14,15 @@ public class DocumentUtil {
     public String parseDocument(String documentPath) {
         File docFile = new File(documentPath);
 
+        return parseDocument(docFile);
+    }
+
+    public String parseDocument(File docFile) {
         try{
             return tika.parseToString(docFile);
         } catch(Exception ex){
             log.error("Exception occurred while parsing document: "
-                    +documentPath+ " Exception: "+ex.getMessage());
+                    + docFile.getPath() + " Exception: "+ex.getMessage());
         }
 
         return Strings.EMPTY;
