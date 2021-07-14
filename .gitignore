@@ -5,3 +5,4 @@
 /.idea/
 .DS_Store
 /src/test/resources/.DS_Store
+/.gradle
